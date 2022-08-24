@@ -6,13 +6,13 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
-      - name: Make a new  envfile
-        uses: SpicyPizza/create-envfile@v1.3
+      - name: Make a new envfile
+        uses: SpicyPizza/create-envfile@v1
       with:
         envKey_POSTGRES_USERNAME:  ${{secrets.POSTGRES_USERNAME}}
         envKey_POSTGRES_PASSWORD:  ${{secrets.POSTGRES_PASSWORD}}
         envKey_DATABASE_URL: ${{secrets.DATABASE_URL_TEST}}
-        directory: back-end
+        directory: back-end/
         file_name: .env.test
       - name: Run tests
         run: docker-compose -f docker-compose-test.yml run node_app npm run test
