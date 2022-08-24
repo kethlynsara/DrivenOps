@@ -9,7 +9,8 @@ jobs:
       - name: Make a new envfile
         uses: SpicyPizza/create-envfile@v1
       with:
-        envKey_POSTGRES_USERNAME:  ${{secrets.POSTGRES_USERNAME}}
+        envKey_POSTGRES_DB: ${{secrets.POSTGRES_DB}}
+        envKey_POSTGRES_USER:  ${{secrets.POSTGRES_USER}}
         envKey_POSTGRES_PASSWORD:  ${{secrets.POSTGRES_PASSWORD}}
         envKey_DATABASE_URL: ${{secrets.DATABASE_URL_TEST}}
         directory: back-end/
