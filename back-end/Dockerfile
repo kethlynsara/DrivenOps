@@ -6,6 +6,7 @@ COPY . .
 
 EXPOSE 5000
 
-RUN npm i && npm run build
+RUN npm i 
+RUN npm run build
 
 CMD ["npm", "start"]
